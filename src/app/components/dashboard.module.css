@@ -1,21 +1,4 @@
 /* Base Theme Colors - Vehicle Dashboard Theme */
-:root {
-  --dash-dark: #211a0c;
-  --dash-medium: #3a2e14;
-  --dash-light: #63512c;
-  --dash-beige: #cfb992;
-  --dash-tan: #a18e6f;
-  --neon-green: #0cfc0c;
-  --neon-green-dim: rgba(12, 252, 12, 0.7);
-  --neon-amber: #fca80c;
-  --neon-red: #fc0c0c;
-  --meter-bg: #0c1a0c;
-  --warning-yellow: #ffd700;
-  --warning-red: #ff0000;
-  --dial-bg: #1a1a1a;
-  --dial-border: #333333;
-}
-
 .dashboard {
   background-color: var(--dash-dark);
   color: var(--neon-green);
