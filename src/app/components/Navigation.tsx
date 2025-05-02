@@ -1,9 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './dashboard.module.css';
 
 const Navigation: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className={styles.dashNav}>
       <div className="container mx-auto">
@@ -42,9 +48,34 @@ const Navigation: React.FC = () => {
             </a>
           </div>
           <div className="md:hidden">
-            <button className={styles.navButton}>
+            <button 
+              className={styles.navButton}
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
               <i className="fas fa-bars"></i>
             </button>
+          </div>
+        </div>
+        {/* Mobile Menu */}
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} mt-4`}>
+          <div className="flex flex-col space-y-2">
+            <a href="#services" className={styles.navButton} onClick={toggleMenu}>
+              <div className={styles.warningLight}></div>
+              Services
+            </a>
+            <a href="#approach" className={styles.navButton} onClick={toggleMenu}>
+              <div className={styles.warningLight}></div>
+              Approach
+            </a>
+            <a href="#about" className={styles.navButton} onClick={toggleMenu}>
+              <div className={styles.warningLight}></div>
+              About
+            </a>
+            <a href="#contact" className={styles.navButton} onClick={toggleMenu}>
+              <div className={styles.warningLight}></div>
+              Contact
+            </a>
           </div>
         </div>
       </div>

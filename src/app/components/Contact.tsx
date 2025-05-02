@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
 
   if (state.succeeded) {
     return (
-      <section id="contact" className={`${styles.dashboardSection} py-16 relative`}>
+      <section id="contact" className={`${styles.dashboardSection} py-8 relative`}>
         <div className="container mx-auto px-6 relative">
           <div className={styles.dashboardPanel}>
             <div className={styles.dashHeader}>
@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className={`${styles.dashboardSection} py-16 relative`}>
+    <section id="contact" className={`${styles.dashboardSection} py-8 relative`}>
       <div className="container mx-auto px-6 relative">
         <div className={styles.dashboardPanel}>
           <div className={styles.dashHeader}>

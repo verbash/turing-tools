@@ -68,7 +68,7 @@ const services = [
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className={`${styles.dashboardSection} py-16 relative`}>
+    <section id="services" className={`${styles.dashboardSection} py-8 relative`}>
       <div className="container mx-auto px-6 relative">
         <div className={styles.dashboardPanel}>
           <div className={styles.dashHeader}>
@@ -83,9 +83,9 @@ const Services: React.FC = () => {
             <h2 className={`${styles.sectionTitle} text-2xl text-center mb-6`}>
               AVAILABLE SERVICES
             </h2>
-            <p className={`${styles.ledText} text-center mb-4`}>
+            {/* <p className={`${styles.ledText} text-center mb-4`}>
               SELECT A SERVICE MODULE TO LEARN MORE
-            </p>
+            </p> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

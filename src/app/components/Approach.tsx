@@ -12,7 +12,7 @@ const approaches = [
   {
     title: 'PRECISION',
     icon: 'fa-cogs',
-    description: 'Every line of code is crafted with attention to detail and best practices.',
+    description: 'Our code is meticulously crafted with attention to detail and industry best practices.',
   },
   {
     title: 'COLLABORATION',
@@ -23,7 +23,7 @@ const approaches = [
 
 const Approach: React.FC = () => {
   return (
-    <section id="approach" className={`${styles.dashboardSection} py-16 relative`}>
+    <section id="approach" className={`${styles.dashboardSection} py-8 relative`}>
       <div className="container mx-auto px-6 relative">
         <div className={styles.dashboardPanel}>
           <div className={styles.dashHeader}>

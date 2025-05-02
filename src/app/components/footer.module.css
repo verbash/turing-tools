@@ -1,0 +1,73 @@
+.footerDashboard {
+  background: linear-gradient(145deg, #e3cfa4 60%, #b89d6d 100%);
+  border-top: 6px solid #b89d6d;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.2), 0 0 30px #0cfc0c22;
+  position: relative;
+  padding: 2rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Share Tech Mono", monospace;
+  overflow: hidden;
+}
+
+.gridOverlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(47, 79, 47, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 79, 47, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+  z-index: 0;
+}
+
+.ledPanel {
+  background: linear-gradient(135deg, #222e1a 80%, #0a150a 100%);
+  border: 2px solid #b89d6d;
+  box-shadow: 0 0 10px #0cfc0c33, 0 0 20px #e3cfa4aa;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.ledText {
+  color: #0cfc0c;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 8px #0cfc0c, 0 0 2px #fff;
+  margin-bottom: 0.5rem;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.socialRow {
+  display: flex;
+  gap: 2rem;
+}
+
+.iconBtn {
+  color: #e3cfa4;
+  background: #222e1a;
+  border: 2px solid #b89d6d;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 0 8px #0cfc0c55;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.iconBtn:hover {
+  color: #0cfc0c;
+  background: #b89d6d;
+  box-shadow: 0 0 16px #0cfc0c;
+  border-color: #0cfc0c;
+}

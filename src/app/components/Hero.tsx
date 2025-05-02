@@ -5,7 +5,7 @@ import styles from './dashboard.module.css';
 
 const Hero: React.FC = () => {
   return (
-    <header className={`${styles.dashboardSection} py-16 relative`}>
+    <header className={`${styles.dashboardSection} py-8 relative`}>
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center relative">
         <div className={`${styles.dashboardPanel} w-full md:w-1/3 mb-12 md:mb-0 p-6`}>
           <div className={styles.dashHeader}>
@@ -66,9 +66,9 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="w-full md:w-2/3 md:pl-8 lg:pl-16 flex justify-center">
+        <div className="w-full md:w-2/3 md:pl-8 lg:pl-16 flex justify-center h-full">
           <div className={`${styles.dashboardPanel} p-6 w-full`}>
-            <div className={`${styles.digitalDisplay} p-4 aspect-video`}>
+            <div className={`${styles.digitalDisplay} p-4 aspect-video w-full min-h-[350px]`}>
               <div className="relative h-full">
                 <div className="flex flex-col h-full justify-center items-center">
                   <div className="flex items-center justify-center mb-6">
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
                   <div className={`${styles.digitalDisplay} p-2 w-3/4 text-center`}>
                     <span className={`${styles.ledText} text-xl`}>TURING TOOLS</span>
                   </div>
-                  <div className="flex justify-between w-3/4 mt-4">
+                  <div className="flex justify-between mt-4">
                     <div className={styles.statusIndicator}>
                       <div className={`${styles.statusLight} ${styles.lightGreen}`}></div>
                       <span className={styles.statusLabel}>CPU</span>
