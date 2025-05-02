@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="w-full md:w-2/3 md:pl-8 lg:pl-16 flex justify-center h-full">
           <div className={`${styles.dashboardPanel} p-6 w-full`}>
-            <div className={`${styles.digitalDisplay} p-4 aspect-video w-full min-h-[350px]`}>
+            <div className={`${styles.digitalDisplay} p-4 w-full min-h-[275px] flex flex-col-reverse`}>
               <div className="relative h-full">
                 <div className="flex flex-col h-full justify-center items-center">
                   <div className="flex items-center justify-center mb-6">
