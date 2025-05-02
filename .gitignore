@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# context for editor
+.vscode
+/context
+
+# materials related to the project
+/materials
