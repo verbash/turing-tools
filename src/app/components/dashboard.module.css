@@ -1,0 +1,484 @@
+/* Base Theme Colors - Vehicle Dashboard Theme */
+:root {
+  --dash-dark: #211a0c;
+  --dash-medium: #3a2e14;
+  --dash-light: #63512c;
+  --dash-beige: #cfb992;
+  --dash-tan: #a18e6f;
+  --neon-green: #0cfc0c;
+  --neon-green-dim: rgba(12, 252, 12, 0.7);
+  --neon-amber: #fca80c;
+  --neon-red: #fc0c0c;
+  --meter-bg: #0c1a0c;
+  --warning-yellow: #ffd700;
+  --warning-red: #ff0000;
+  --dial-bg: #1a1a1a;
+  --dial-border: #333333;
+}
+
+.dashboard {
+  background-color: var(--dash-dark);
+  color: var(--neon-green);
+  font-family: "Share Tech Mono", monospace;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.dashboard::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.dashboardDial {
+  width: 100px;
+  height: 100px;
+  background: var(--dial-bg);
+  border: 4px solid var(--dial-border);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(12, 252, 12, 0.3);
+}
+
+.dialMarkers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+
+.dialMarker {
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  background: var(--neon-green);
+  left: 50%;
+  transform-origin: 0 50px;
+}
+
+.dialNeedle {
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: var(--neon-red);
+  left: 50%;
+  top: 10px;
+  transform-origin: 0 40px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px var(--neon-red);
+}
+
+.dashboardPanel {
+  background: linear-gradient(145deg, var(--dash-beige), var(--dash-tan));
+  border: 6px solid var(--dash-tan);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(207, 185, 146, 0.2), 0 0 30px rgba(12, 252, 12, 0.1);
+  position: relative;
+  padding: 4px;
+}
+
+.dashboardPanel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.digitalDisplay {
+  background: linear-gradient(135deg, var(--meter-bg), #0a150a);
+  border: 2px solid var(--dash-tan);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8), 0 0 5px rgba(12, 252, 12, 0.3),
+    0 0 20px rgba(12, 252, 12, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.digitalDisplay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(12, 252, 12, 0.1) 0%,
+    transparent 50%,
+    rgba(12, 252, 12, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dash-tan);
+  border-radius: 2px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 0 5px rgba(12, 252, 12, 0.2);
+}
+
+.statusLabel {
+  font-size: 0.7rem;
+  margin-right: 8px;
+  color: var(--neon-green);
+  text-shadow: 0 0 5px rgba(12, 252, 12, 0.7);
+}
+
+.gaugeContainer {
+  background-color: var(--meter-bg);
+  height: 15px;
+  border: 1px solid var(--dash-tan);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gaugeFill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--neon-green) 0%,
+    var(--neon-amber) 70%,
+    var(--neon-red) 90%
+  );
+  box-shadow: 0 0 8px rgba(12, 252, 12, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.gaugeContainer:hover .gaugeFill {
+  width: 100% !important;
+  background: linear-gradient(
+    90deg,
+    var(--neon-green) 0%,
+    var(--neon-amber) 50%,
+    var(--neon-red) 100%
+  );
+  box-shadow: 0 0 12px rgba(12, 252, 12, 0.7);
+}
+
+.warningLight {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--warning-yellow);
+  box-shadow: 0 0 10px var(--warning-yellow);
+  animation: warningPulse 2s infinite;
+}
+
+@keyframes warningPulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.gridPattern {
+  background-image: linear-gradient(rgba(47, 79, 47, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 79, 47, 0.5) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ledText {
+  font-family: "VT323", monospace;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(12, 252, 12, 0.7);
+  position: relative;
+}
+
+.ledText:not([class*="text-"]) {
+  color: var(--neon-green);
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  text-shadow: 0 0 5px rgba(12, 252, 12, 0.7);
+}
+
+/* Navigation Styles */
+.dashNav {
+  background-color: var(--dash-beige);
+  border-bottom: 4px solid var(--dash-tan);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 1rem 1.5rem;
+}
+
+.navButton {
+  background-color: var(--dash-light);
+  color: var(--dash-beige);
+  border: 2px solid var(--dash-tan);
+  border-radius: 2px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
+
+.navButton:hover {
+  background-color: var(--dash-tan);
+  transform: translateY(1px);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Control Knobs and Buttons */
+.dashControl {
+  background: linear-gradient(145deg, var(--dash-light), var(--dash-medium));
+  border: 2px solid var(--dash-dark);
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.dashControl::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background-color: var(--dash-dark);
+  transform: rotate(45deg);
+}
+
+/* Digital Form Inputs */
+.digitalInput {
+  background-color: var(--meter-bg);
+  color: var(--neon-green);
+  border: 2px solid var(--dash-tan);
+  transition: all 0.3s ease;
+  font-family: "VT323", monospace;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.digitalInput:focus {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 0 2px rgba(12, 252, 12, 0.3);
+  outline: none;
+}
+
+/* Service Cards */
+.serviceCard {
+  transition: all 0.3s ease;
+  background-color: var(--dash-beige);
+  border: 3px solid var(--dash-tan);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.serviceDisplay {
+  background-color: var(--meter-bg);
+  border: 2px solid var(--dash-tan);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+/* Dashboard Header */
+.dashHeader {
+  background-color: var(--dash-tan);
+  color: var(--dash-dark);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  align-items: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.dashControls {
+  display: flex;
+  gap: 5px;
+}
+
+.controlDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--dash-dark);
+}
+
+/* Status Lights */
+.statusLight {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--dash-tan);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.lightGreen {
+  background-color: var(--neon-green);
+  box-shadow: 0 0 8px rgba(12, 252, 12, 0.7);
+}
+
+.lightAmber {
+  background-color: var(--neon-amber);
+  box-shadow: 0 0 8px rgba(252, 168, 12, 0.7);
+}
+
+.lightRed {
+  background-color: var(--neon-red);
+  box-shadow: 0 0 8px rgba(252, 12, 12, 0.7);
+}
+
+/* Blinking effect */
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Success and Error messages */
+.formSuccessMessage {
+  display: none;
+  background-color: var(--meter-bg);
+  color: var(--neon-green);
+  padding: 15px;
+  border: 2px solid var(--neon-green);
+  margin-top: 20px;
+  font-family: "VT323", monospace;
+}
+
+.formErrorMessage {
+  display: none;
+  background-color: var(--meter-bg);
+  color: var(--neon-red);
+  padding: 15px;
+  border: 2px solid var(--neon-red);
+  margin-top: 20px;
+  font-family: "VT323", monospace;
+}
+
+/* Digital Button */
+.digitalBtn {
+  background-color: var(--dash-light);
+  color: var(--dash-beige);
+  border: 2px solid var(--dash-tan);
+  border-radius: 2px;
+  padding: 0.75rem 1.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.digitalBtn:hover {
+  background-color: var(--dash-tan);
+  transform: translateY(1px);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Spacing */
+.dashboardSection {
+  scroll-margin-top: 4rem;
+}
+
+.dashboardSection:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/* Smooth Scrolling */
+.dashboard {
+  scroll-behavior: smooth;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .dashNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .dashboardSection {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* Progress Bar Gauges */
+.gauge-bg {
+  background-color: var(--meter-bg);
+  border: 1px solid var(--dash-tan);
+  border-radius: 2px;
+  height: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.gauge-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--neon-green) 0%,
+    var(--neon-amber) 70%,
+    var(--neon-red) 90%
+  );
+  box-shadow: 0 0 8px rgba(12, 252, 12, 0.5);
+  transition: width 0.5s ease-in-out;
+}
