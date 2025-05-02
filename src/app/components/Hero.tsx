@@ -5,7 +5,7 @@ import styles from './dashboard.module.css';
 
 const Hero: React.FC = () => {
   return (
-    <header className={`${styles.dashboardSection} py-8 relative`}>
+    <header className={`${styles.dashboardSection} pt-[100px] pb-8 relative`}>
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center relative">
         <div className={`${styles.dashboardPanel} w-full md:w-1/3 mb-12 md:mb-0 p-6`}>
           <div className={styles.dashHeader}>

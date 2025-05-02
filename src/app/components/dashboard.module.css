@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap");
+
 /* Base Theme Colors - Vehicle Dashboard Theme */
 .dashboard {
   background-color: var(--dash-dark);
